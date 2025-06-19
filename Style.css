@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  background: linear-gradient(to bottom right, #004466, #66ccff);
+  font-family: 'Arial Rounded MT Bold', sans-serif;
+  color: white;
+}
+
+#gameArea {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.item {
+  position: absolute;
+  font-size: 2.5rem;
+  user-select: none;
+  cursor: pointer;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+#gameTitle {
+  font-size: 1.5rem;
+}
+
+#pauseBtn {
+  background: #ffffff33;
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 5px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#hud {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 1.1rem;
+}
+
+#pauseMenu, #messageOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  display: none;
+  z-index: 999;
+}
+
+#pauseMenu button, #messageOverlay button {
+  background: #ffffff22;
+  color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#lives {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+}
+
+.feedback {
+  position: absolute;
+  font-size: 1.2rem;
+  font-weight: bold;
+  animation: fadeUp 0.5s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes fadeUp {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-30px); }
+}
+
+@media (max-width: 768px) {
+  #gameTitle {
+    font-size: 1.2rem;
+  }
+
+  #pauseBtn {
+    padding: 4px 10px;
+    font-size: 0.9rem;
+  }
+
+  #hud {
+    font-size: 1rem;
+    gap: 10px;
+  }
+}
